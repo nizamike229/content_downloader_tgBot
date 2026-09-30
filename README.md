@@ -3,7 +3,8 @@
 The bot accepts video links from YouTube, Reddit, and Pinterest, downloads them
 with `yt-dlp`, and sends them back to Telegram. For YouTube links, it offers a
 choice between downloading the highest-quality video or extracting the
-highest-quality audio.
+highest-quality audio. Audio downloads include the video's title as the file
+name, embedded metadata, and the video's thumbnail as cover art.
 
 ## Project structure
 

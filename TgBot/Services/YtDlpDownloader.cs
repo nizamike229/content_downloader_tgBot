@@ -27,7 +27,7 @@ public sealed class YtDlpDownloader(string executable) : IVideoDownloader
         var directory = Directory.CreateTempSubdirectory("tgbot-");
         var outputTemplate = Path.Combine(
             directory.FullName,
-            isAudioOnly ? "%(id)s.%(ext)s" : "%(id)s.%(ext)s");
+            isAudioOnly ? "%(title).150s.%(ext)s" : "%(id)s.%(ext)s");
 
         try
         {
@@ -98,6 +98,8 @@ public sealed class YtDlpDownloader(string executable) : IVideoDownloader
             startInfo.ArgumentList.Add("m4a");
             startInfo.ArgumentList.Add("--audio-quality");
             startInfo.ArgumentList.Add("0");
+            startInfo.ArgumentList.Add("--embed-thumbnail");
+            startInfo.ArgumentList.Add("--add-metadata");
         }
         else
         {
