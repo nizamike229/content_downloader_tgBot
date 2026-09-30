@@ -19,7 +19,7 @@ public sealed class TelegramUpdateHandler(IVideoDownloader downloader)
         {
             await client.SendMessage(
                 message.Chat.Id,
-                "Send a video link from YouTube, Reddit, or Pinterest and I will download and send it here.",
+                "👋 Send a video link from YouTube, Reddit, or Pinterest and I will download and send it here! 🎬",
                 cancellationToken: cancellationToken);
             return;
         }
@@ -29,7 +29,7 @@ public sealed class TelegramUpdateHandler(IVideoDownloader downloader)
         {
             await client.SendMessage(
                 message.Chat.Id,
-                "Please send a link from YouTube, Reddit, or Pinterest.",
+                "🔗 Please send a link from YouTube, Reddit, or Pinterest.",
                 cancellationToken: cancellationToken);
             return;
         }
@@ -40,7 +40,7 @@ public sealed class TelegramUpdateHandler(IVideoDownloader downloader)
             cancellationToken: cancellationToken);
         var statusMessage = await client.SendMessage(
             message.Chat.Id,
-            "Downloading the video...",
+            "⏳ Downloading the video...",
             cancellationToken: cancellationToken);
 
         try
@@ -49,7 +49,7 @@ public sealed class TelegramUpdateHandler(IVideoDownloader downloader)
             await client.SendVideo(
                 message.Chat.Id,
                 InputFile.FromStream(video.Stream, video.FileName),
-                caption: "Done",
+                caption: "✅ Done!",
                 supportsStreaming: true,
                 cancellationToken: cancellationToken);
         }
@@ -62,7 +62,7 @@ public sealed class TelegramUpdateHandler(IVideoDownloader downloader)
             Console.Error.WriteLine(exception);
             await client.SendMessage(
                 message.Chat.Id,
-                $"Could not download the video: {exception.Message}",
+                $"😕 Could not download the video: {exception.Message}",
                 cancellationToken: cancellationToken);
         }
         finally
