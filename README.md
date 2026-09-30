@@ -15,11 +15,12 @@ TgBot/
 
 ## Running
 
-1. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download) and `yt-dlp`.
+1. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download), `yt-dlp`,
+   and `ffmpeg`. `ffmpeg` is required to merge or convert downloads to MP4.
    On macOS:
 
    ```bash
-   brew install yt-dlp
+   brew install yt-dlp ffmpeg
    ```
 
 2. Create a bot using [@BotFather](https://t.me/BotFather) and set its token:
