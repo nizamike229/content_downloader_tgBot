@@ -1,7 +1,9 @@
 # Telegram Video Bot
 
 The bot accepts video links from YouTube, Reddit, and Pinterest, downloads them
-with `yt-dlp`, and sends them back to Telegram.
+with `yt-dlp`, and sends them back to Telegram. For YouTube links, it offers a
+choice between downloading the highest-quality video or extracting the
+highest-quality audio.
 
 ## Project structure
 
