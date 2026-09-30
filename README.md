@@ -3,6 +3,16 @@
 The bot accepts video links from YouTube, Reddit, and Pinterest, downloads them
 with `yt-dlp`, and sends them back to Telegram.
 
+## Project structure
+
+```text
+TgBot/
+├── Bot/       Telegram application lifecycle and update handling
+├── Models/    Downloaded media models
+├── Services/  URL extraction and video download services
+└── Program.cs Application composition and startup
+```
+
 ## Running
 
 1. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download) and `yt-dlp`.
