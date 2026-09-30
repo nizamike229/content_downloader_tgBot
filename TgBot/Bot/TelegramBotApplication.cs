@@ -16,6 +16,7 @@ public sealed class TelegramBotApplication(string botToken, IVideoDownloader dow
             AllowedUpdates = [UpdateType.Message, UpdateType.CallbackQuery]
         };
 
+        await bot.DeleteWebhook(cancellationToken: cancellationToken);
         bot.StartReceiving(
             updateHandler.HandleUpdateAsync,
             updateHandler.HandlePollingErrorAsync,
