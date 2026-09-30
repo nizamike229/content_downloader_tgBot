@@ -17,6 +17,8 @@ TgBot/
 
 1. Install the [.NET 10 SDK](https://dotnet.microsoft.com/download), `yt-dlp`,
    and `ffmpeg`. `ffmpeg` is required to merge or convert downloads to MP4.
+   The downloader selects the highest available video and audio quality, then
+   converts the result to an MP4 that Telegram can display.
    On macOS:
 
    ```bash

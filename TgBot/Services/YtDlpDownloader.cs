@@ -65,7 +65,9 @@ public sealed class YtDlpDownloader(string executable) : IVideoDownloader
         startInfo.ArgumentList.Add("--max-filesize");
         startInfo.ArgumentList.Add("49M");
         startInfo.ArgumentList.Add("-f");
-        startInfo.ArgumentList.Add("bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/best");
+        startInfo.ArgumentList.Add("bestvideo+bestaudio/best");
+        startInfo.ArgumentList.Add("-S");
+        startInfo.ArgumentList.Add("res,fps,br");
         startInfo.ArgumentList.Add("--merge-output-format");
         startInfo.ArgumentList.Add("mp4");
         startInfo.ArgumentList.Add("--recode-video");
