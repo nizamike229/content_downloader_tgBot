@@ -4,6 +4,11 @@ namespace TgBot.Services;
 
 public static partial class SupportedUrlExtractor
 {
+    public static bool IsYouTube(string url) =>
+        Uri.TryCreate(url, UriKind.Absolute, out var uri)
+        && (uri.Host.EndsWith("youtube.com", StringComparison.OrdinalIgnoreCase)
+            || uri.Host.EndsWith("youtu.be", StringComparison.OrdinalIgnoreCase));
+
     public static string? Extract(string text)
     {
         var match = UrlPattern().Match(text);

@@ -13,7 +13,7 @@ public sealed class TelegramBotApplication(string botToken, IVideoDownloader dow
         var updateHandler = new TelegramUpdateHandler(downloader);
         var receiverOptions = new ReceiverOptions
         {
-            AllowedUpdates = [UpdateType.Message]
+            AllowedUpdates = [UpdateType.Message, UpdateType.CallbackQuery]
         };
 
         bot.StartReceiving(
