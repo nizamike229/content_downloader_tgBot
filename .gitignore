@@ -1,4 +1,26 @@
-bin/
-obj/
-.idea/
+# Default by Rider
 
+/packages/
+
+riderModule.iml
+
+/_ReSharper.Caches/
+
+
+# Rider
+
+.idea
+
+
+# Build results
+
+[Dd]ebug/
+
+[Bb]in/
+
+[Oo]bj/
+
+
+# Visual Studio
+
+.vs/
